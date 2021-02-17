@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /roms/ports/ecwolf
+cd "$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )/ecwolf"
 export SDL_GAMECONTROLLERCONFIG="$(cat gamecontrollerdb.txt)"
-./ecwolf --data sd2
+./ecwolf --config ./ecwolf.cfg --data sd2
 unset SDL_GAMECONTROLLERCONFIG
